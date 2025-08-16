@@ -73,7 +73,7 @@ The server will start on `http://localhost:5000`.
     ```
 3.  Start the application:
     ```bash
-    npm start
+    npm run dev
     ```
 The application will be available at `http://localhost:5173`.
 

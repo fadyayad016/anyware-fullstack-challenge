@@ -1,14 +1,14 @@
-import 'reflect-metadata'; 
+import 'reflect-metadata';
 import express, { Application } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import 'dotenv/config';
 
 import announcementsRouter from './routes/announcements';
-import quizzesRouter from './routes/quizzes'; 
+import quizzesRouter from './routes/quizzes';
 
 const app: Application = express();
-// const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -22,11 +22,8 @@ mongoose.connect(uri)
 
 // API Routes
 app.use('/announcements', announcementsRouter);
-app.use('/quizzes', quizzesRouter); 
+app.use('/quizzes', quizzesRouter);
 
-// app.listen(port, () => {
-//   console.log(`Server is running on port: ${port}`);
-// });
-
-
-export default app;
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`);
+});

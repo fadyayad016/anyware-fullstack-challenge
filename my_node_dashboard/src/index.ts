@@ -8,7 +8,7 @@ import announcementsRouter from './routes/announcements';
 import quizzesRouter from './routes/quizzes'; 
 
 const app: Application = express();
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -24,6 +24,9 @@ mongoose.connect(uri)
 app.use('/announcements', announcementsRouter);
 app.use('/quizzes', quizzesRouter); 
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server is running on port: ${port}`);
+// });
+
+
+export default app;
